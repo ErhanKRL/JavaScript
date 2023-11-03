@@ -8,4 +8,25 @@
  *  Create a conditional statement to change the log depending on whether you read it yet or not. If you read it, log a string like You already read "The Hobbit" right after the log of the book details
  *  If you haven't read it log a string like You still need to read "The Lord of the Rings"
  */
+const myBooks = [
+    {
+        title: 'The Lord of the Rings',
+        author: 'J.R.R. Tolkien',
+        alreadyRead: true,
+    },
+    {
+        title: 'The Hobbit',
+        author: 'J.R.R. Tolkien',
+        alreadyRead: true,
+    },
+    {
+        title: 'Silmarillion',
+        author: 'J.R.R. Tolkien',
+        alreadyRead: true,
+    }
+]
 
+for (let item in myBooks){
+    const book = myBooks[item]
+   book.alreadyRead === true ? console.log(`${book.title} by ${book.author}. You already read ${book.title}`) : console.log(`${book.title} by ${book.author}. You still need to read ${book.title}`)
+}

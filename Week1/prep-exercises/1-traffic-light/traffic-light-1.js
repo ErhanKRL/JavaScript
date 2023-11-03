@@ -16,6 +16,21 @@ while (rotations < 2) {
   // if the color is green, turn it orange
   // if the color is orange, turn it red
   // if the color is red, add 1 to rotations and turn it green
+  switch (currentState) {
+    case "green":
+      trafficLight.state = "orange";
+      break;
+    case "orange":
+      trafficLight.state = "red";
+      break;
+    case "red":
+      trafficLight.state = "green";
+      rotations++;
+      break;
+    default:
+      console.error("Invalid state");
+      break;
+  }
 }
 
 /**
