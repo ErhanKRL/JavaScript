@@ -22,7 +22,6 @@ console.log(possibleMentorsForModule('using-apis'));
  * It should return a single name.
  */
 const findMentorForModule = (moduleName) => {
-  // TODO complete this function
   const possibleMentors = possibleMentorsForModule(moduleName);
   return possibleMentors[Math.floor(Math.random() * possibleMentors.length)];
 };
