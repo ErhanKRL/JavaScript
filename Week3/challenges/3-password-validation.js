@@ -21,3 +21,20 @@ const passwordList = [
     { times: '1-3', letter: 'b', password: 'cdefg'},
     { times: '2-9', letter: 'c', password: 'ccccccccc'}
 ];
+
+passwordList.forEach(item => {
+    const min = Number(item.times[0]);
+    const max = Number(item.times[2]);
+    const letter = item.letter;
+    const password = item.password.split('');
+    let frequency = 0;
+    password.forEach(item => {
+        if(item === letter){
+            frequency += 1;
+        }
+    })
+    let validation = '';
+    frequency >= min && frequency <= max ? validation = 'VALID' : validation = 'INVALID'
+    console.log(`'${item.password}' is ${validation} ${letter} is present ${frequency} times and should have been present at least ${min} and at most ${max} times `)
+   
+})
