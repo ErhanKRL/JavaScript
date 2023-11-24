@@ -35,6 +35,7 @@ class Wallet {
     }
 
     this.#cash -= amount;
+    this.#dayTotalWithdrawal += amount;
     return amount;
   }
 
@@ -72,6 +73,9 @@ function main() {
   const walletJane = new Wallet('Jane', 20);
 
   walletJack.transferInto(walletJoe, 50);
+  walletJack.setDailyAllowance(80);
+  walletJack.transferInto(walletJoe, 50);
+  
   walletJane.transferInto(walletJoe, 25);
 
   walletJane.deposit(20);
